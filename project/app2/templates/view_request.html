@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "donorhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+                 <th>Applicant_name</th>
+                 <th>Applicant_address</th>
+                 <th>Applicant_number</th>
+                 <th>Applicant_email</th>
+                 <th></th>
+           </tr>
+            {% for ct in items %}
+
+            <tr>
+                <td>{{ ct.tbl_victim_name}}</td>
+                <td>{{ ct.tbl_victim_address}}</td>
+                <td>{{ ct.tbl_victim_number}}</td>
+                <td>{{ ct.tbl_victim_email}}</td>
+                <td><a href="/viewrequest2/{{ ct.tbl_victim_id }}">view request</a></td>
+                
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

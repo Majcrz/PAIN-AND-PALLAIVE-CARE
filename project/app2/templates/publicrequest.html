@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="basic">
+        {% include "public_header.html" %}
+    </div>
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" enctype="multipart/form-data" action="/publicrequest1/" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Apply a Request</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="victim_name" id="victim_name" placeholder="Enter Name Here"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="victim_address" id="victim_address" placeholder="Enter Address"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-input" name="victim_number" id="victim_number" placeholder="Enter Phone Number"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="victim_email" id="victim_email" placeholder="Enter Email Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="request" id="request" placeholder="Enter Request Here"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="request_aadhaar" id="request_aadhaar" placeholder="Enter Aadhaar number "/>
+                        </div> 
+                        <div class="form-group">
+                            <input type="submit" name="victim_submit" id="victim_submit" class="form-submit" value="submit"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

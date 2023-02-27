@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        label{
+            color:rgb(44, 6, 80);
+            margin-left:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="basic">
+        {% include "donorhome.html" %}
+    </div>
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" enctype="multipart/form-data" action="/donation4/" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">DONATION</h2>
+                        <div class="form-group">
+                            <label>
+                                donor id
+                            </label>
+                            <input type="text" required="required" class="form-input" name="donor_id" id="donor_id" value="{{uid}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="donation" id="donation" placeholder="donation"/>
+                        </div>
+                      
+                        <div class="form-group">
+                            <input type="submit" name="request_submit" id="request_submit" class="form-submit" value="submit"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

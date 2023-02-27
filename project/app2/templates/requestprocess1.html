@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "adminhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+                 <th>Applicant_id</th>
+                 <th>volunteer_id</th>
+                 <th>request</th>
+                 <th>request_date</th>
+                 <th>Applicant_aadhaar</th>
+           </tr>
+            {% for ct in items2 %}
+            <tr>
+                <td>{{ ct.tbl_victim_id}}</td>
+                <td>{{ ct.tbl_volunteer_id}}</td>
+                <td>{{ ct.tbl_request}}</td>
+                <td>{{ ct.tbl_request_date}}</td>
+                <td>{{ ct.tbl_victim_aadhaar}}</td>
+                <td><a href="/allotment1/{{ ct.id }}">Accept</a></td>
+                <td><a href="/allotment5/{{ ct.id }}">Reject</a></td>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

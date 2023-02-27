@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "volunteerhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+            <th>allotment_id</th>   
+            <th>request_id</th>
+            <th>allotment</th>
+            <th>allotment_date</th>
+           </tr>
+            {% for ct in items2 %}
+            <tr>
+                <td>{{ ct.tbl_allotment_id}}</td>
+                <td>{{ ct.tbl_request_id}}</td>
+                <td>{{ ct.tbl_allotment}}</td>
+                <td>{{ ct.tbl_allotment_date}}</td>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

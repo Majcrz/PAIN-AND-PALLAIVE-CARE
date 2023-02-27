@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" enctype="multipart/form-data" action="/allotmenttable/" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Allotment</h2>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="request_id" id="request_id" placeholder="Enter request id"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="allotment" id="allotment"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" required="required" class="form-input" name="allotment_date" id="allotment_date"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="allotment_submit" id="allotment_submit" class="form-submit" value="Add"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "volunteerhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+            <th>Applicant_id</th>
+            <th>volunteer_id</th>
+            <th>request</th>
+            <th>request_date</th>
+           </tr>
+            {% for ct in items %}
+            <tr>
+                <td>{{ ct.tbl_victim_id}}</td>
+                <td>{{ ct.tbl_volunteer_id}}</td>
+                <td>{{ ct.tbl_request}}</td>
+                <td>{{ ct.tbl_request_date}}</td>
+                <td><a href="/volunteerallot1/{{ ct.id }}">View Allot</a></td>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

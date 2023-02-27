@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="basic">
+        {% include "volunteerhome.html" %}
+    </div>
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" action="/victimregistration/" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Applicant Registration</h2>
+                        <div class="form-group">
+                            <input type="test" class="form-input" name="victim_name" id="victim_name" placeholder="Enter Name Here"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="victim_address" id="victim_address" placeholder="Enter Address"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-input" name="victim_number" id="victim_number" placeholder="Enter Phone Number"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="victim_aadhaar" id="victim_aadhaar" placeholder="Enter Aadhaar number "/>
+                        </div> 
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="victim_email" id="victim_email" placeholder="Enter Email Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="victim_submit" id="victim_submit" class="form-submit" value="Add"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

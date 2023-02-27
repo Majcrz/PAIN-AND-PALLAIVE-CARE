@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "adminhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+                 <th>donor_name</th>
+                 <th>donor_address</th>
+                 <th>donor_email</th>
+                 <th>donor_number</th>
+                 <th>donor_aadhaar</th>
+                 <th></th>
+           </tr>
+            {% for ct in items %}
+            <tr>
+                <td>{{ ct.tbl_donor_name}}</td>
+                <td>{{ ct.tbl_donor_address}}</td>
+                <td>{{ ct.tbl_donor_email}}</td>
+                <td>{{ ct.tbl_donor_phone}}</td>
+                <td>{{ ct.tbl_donor_aadhaar}}</td>
+                <td><a href="/viewrequest5/{ ct.tbl_donor_id }">View Donation</a></td>>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

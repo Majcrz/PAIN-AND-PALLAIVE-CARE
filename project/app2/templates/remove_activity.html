@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "adminhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+
+    
+           <tr>
+                 <th>activity_name</th>
+                 <th>activity_description</th>
+                 <th></th>
+           </tr>
+             {% for ct in items %}
+            <tr>
+                    <td>{{ ct.actadd_name}}</td>
+                    <td>{{ ct.actadd_description}}</td>
+                    <td><a href="/delete_activity/{{ ct.id }}">delete</a></td>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

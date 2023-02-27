@@ -1,0 +1,30 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "adminhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+                 <th>donor_id</th>
+                 <th>donation</th>
+                 <th>request</th>
+                 <th>donation_date</th>
+                 <th>donor_aadhaar</th>
+           </tr>
+            {% for ct in items2 %}
+            <tr>
+                <td>{{ ct.tbl_donor_id}}</td>
+                <td>{{ ct.tbl_donation}}</td>
+                <td>{{ ct.tbl_request}}</td>
+                <td>{{ ct.tbl_donation_date}}</td>
+                <td>{{ ct.tbl_donor_aadhaar}</td>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>

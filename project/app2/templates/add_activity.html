@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+
+
+<body>
+    <div class="basic">
+        {% include "adminhome.html" %}
+    </div>
+    <div class="main">
+<br>
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" action="/activity/" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Add Activity</h2>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="activity_name" id="activity_name" placeholder="Type Activity Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="activity_description" id="activity_description" placeholder="Type Description Here"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="activity_submit" id="activity_submit" class="form-submit" value="Add"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

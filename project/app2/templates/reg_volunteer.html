@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="basic">
+        {% include "public_header.html" %}
+    </div>
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" enctype="multipart/form-data" action="/publicv/" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Register Volunteer</h2>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="volunteer_name" id="volunteer_name" placeholder="Enter Volunteer Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="volunteer_address" id="volunteer_address" placeholder="Enter Address"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" required="required" class="form-input" name="volunteer_age" id="volunteer_age" placeholder="Enter Age"/>
+                        </div>
+                        <div class="form-group">
+                          Male<input type="radio" class="form-input" name="volunteer_male" id="volunteer_male" value="male"/>
+                           Female<input type="radio" class="form-input" name="volunteer_female" id="volunteer_female" value="female"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="volunteer_city" id="volunteer_city" placeholder="Enter City Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="required" class="form-input" name="volunteer_location" id="volunteer_location" placeholder="Enter Location"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" class="form-input" name="volunteer_photo" id="volunteer_photo" placeholder="Choose photo"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" required="required" class="form-input" name="volunteer_email" id="volunteer_email" placeholder="Enter email here"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" required="required"
+                             class="form-input" name="volunteer_number" id="volunteer_number" placeholder="Enter Phone number"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="volunteer_aadhaar" id="volunteer_aadhaar" placeholder="Enter Aadhaar number "/>
+                        </div> 
+                        <div class="form-group">
+                            <input type="password" required="required" class="form-input" name="volunteer_password" id="volunteer_password" placeholder="Enter password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="volunteer_submit" id="volunteer_submit" class="form-submit" value="Add"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

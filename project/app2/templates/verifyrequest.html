@@ -1,0 +1,37 @@
+<html>
+    <head>
+        {% load static %}
+        <div class="basic">
+            {% include "adminhome.html" %}
+        </div>
+        <link rel="stylesheet" href="{% static 'table_css/table.css' %}">
+
+    </head>
+    <body>
+        <table id="customers">
+           <tr>
+                 <th>Applicant_name</th>
+                 <th>Applicant_address</th>
+                 <th>Applicant_number</th>
+                 <th>Applicant_email</th>
+                 <th>request</th>
+                 <th>request_date</th>
+                 <th>request_aadhaar</th>
+                 <th></th>
+           </tr>
+            {% for ct in items %}
+            <tr>
+                <td>{{ ct.tbl_victim_name}}</td>
+                <td>{{ ct.tbl_victim_address}}</td>
+                <td>{{ ct.tbl_victim_number}}</td>
+                <td>{{ ct.tbl_victim_email}}</td>
+                <td>{{ ct.tbl_request}}</td>
+                <td>{{ ct.tbl_request_date}}</td>
+                <td>{{ ct.tbl_request_aadhaar}}</td>
+                <td><a href="/verifyrequest2/{{ ct.id }}">Accept</a></td>
+                <td><a href="/verifyrequest1/{{ ct.id }}">Reject</a></td>
+                {% endfor %}
+            </tr>
+            </table>
+    </body>
+</html>
